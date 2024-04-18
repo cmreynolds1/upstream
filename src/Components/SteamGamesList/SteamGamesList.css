@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css?family=Orbitron');
+
+#mainpage .gamepic {
+  width: 50px;
+  height: 50px;
+}
+
+#mainpage table {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#mainpage #Upstreamtitle {
+  font-family: "Arial";
+  text-align: center;
+}
+
+#mainpage th {
+  padding: 10px;
+}
+
+#mainpage .game-row {
+  transition: opacity 0.5s ease, max-height 0.5s ease, padding 0.5s ease, margin 0.5s ease;
+  opacity: 1;
+  max-height: 100px;
+  text-align: center;
+}
+
+#mainpage .game-row.hidden {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  border: none;
+  display: none;
+}
+
+#mainpage #footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: inherit;
+}
+
+#mainpage .gameheader {
+  text-align: center;
+}
+
+#mainpage .heading-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#mainpage .heading-title {
+  flex-grow: 1;
+  text-align: center;
+}
+
+#mainpage .small-dropdown {
+  max-width: 200px;
+  padding: 5px;
+}
+
+#mainpage .small-button {
+  padding: 5px 10px;
+  font-size: 0.8rem;
+  margin: 0;
+}

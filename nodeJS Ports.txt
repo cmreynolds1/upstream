@@ -1,0 +1,25 @@
+C:\senior-project\nodeJS-scripts\authentication\steam_login\steam_login.js -> localhost:9000
+C:\senior-project\nodeJS-scripts\authentication\steam_login\sync_steam_id.js -> localhost:9013
+
+C:\senior-project\nodeJS-scripts\databases\games\fetch_game_library.js -> localhost:9002
+C:\senior-project\nodeJS-scripts\databases\games\get_games.js -> localhost:9003
+C:\senior-project\nodeJS-scripts\databases\games\save_changes.js -> localhost:9009
+C:\senior-project\nodeJS-scripts\databases\games\update_games.js -> localhost:9012
+C:\senior-project\nodeJS-scripts\databases\lists\list_options.js -> localhost:9010
+C:\senior-project\nodeJS-scripts\databases\games\get_achievements.js -> localhost:9016
+
+C:\senior-project\nodeJS-scripts\databases\forums\get_posts.js -> localhost:9004
+C:\senior-project\nodeJS-scripts\databases\forums\submit_posts.js -> localhost:9005
+C:\senior-project\nodeJS-scripts\databases\forums\delete_post.js -> localhost:9006
+
+C:\senior-project\nodeJS-scripts\friends\get_friends.js -> localhost:9014
+C:\senior-project\nodeJS-scripts\friends\add_friends.js -> localhost:9015
+C:\senior-project\nodeJS-scripts\friends\delete_friend.js -> localhost:9020
+
+C:\senior-project\nodeJS-scripts\databases\lists\add_list.js -> localhost:9011
+C:\senior-project\nodeJS-scripts\databases\lists\get_lists.js -> localhost:9017
+C:\senior-project\nodeJS-scripts\databases\lists\delete_list.js -> localhost:9018
+C:\senior-project\nodeJS-scripts\databases\lists\statistics.js -> localhost:9019
+
+C:\senior-project\nodeJS-scripts\databases\users\upload_changes.js -> localhost:9007
+C:\senior-project\nodeJS-scripts\databases\users\get_profile_data.js -> localhost:9008

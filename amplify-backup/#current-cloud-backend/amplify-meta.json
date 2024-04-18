@@ -1,0 +1,54 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-upstreamreact-test-00119-authRole",
+      "UnauthRoleArn": "arn:aws:iam::975050233774:role/amplify-upstreamreact-test-00119-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::975050233774:role/amplify-upstreamreact-test-00119-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-upstreamreact-test-00119-deployment",
+      "UnauthRoleName": "amplify-upstreamreact-test-00119-unauthRole",
+      "StackName": "amplify-upstreamreact-test-00119",
+      "StackId": "arn:aws:cloudformation:us-east-2:975050233774:stack/amplify-upstreamreact-test-00119/d9b09010-c939-11ee-b3a1-02a46b8489ab",
+      "AmplifyAppId": "dh76gvqlakwc3"
+    }
+  },
+  "auth": {
+    "upstreamreact": {
+      "service": "Cognito",
+      "serviceType": "imported",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false,
+      "output": {
+        "UserPoolId": "us-east-2_PSc0mVTYC",
+        "UserPoolName": "Upstream-Auth",
+        "AppClientID": "5ibvndafnn5addkmlfnqdqf1m7",
+        "AppClientIDWeb": "5ibvndafnn5addkmlfnqdqf1m7"
+      },
+      "frontendAuthConfig": {
+        "socialProviders": [],
+        "usernameAttributes": [
+          "EMAIL"
+        ],
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyMinLength": 8,
+          "passwordPolicyCharacters": [
+            "REQUIRES_LOWERCASE",
+            "REQUIRES_UPPERCASE",
+            "REQUIRES_NUMBERS",
+            "REQUIRES_SYMBOLS"
+          ]
+        },
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "lastPushTimeStamp": "2024-02-12T00:02:25.240Z"
+    }
+  }
+}

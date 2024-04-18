@@ -1,0 +1,5 @@
+.tooltip-list-item::before {
+    content: '•';
+    display: inline-block;
+    width: 20px;
+  }

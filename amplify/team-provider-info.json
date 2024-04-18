@@ -1,0 +1,100 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-amplifyc7866ffdec2b4-staging-160435-authRole",
+      "UnauthRoleArn": "arn:aws:iam::975050233774:role/amplify-amplifyc7866ffdec2b4-staging-160435-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::975050233774:role/amplify-amplifyc7866ffdec2b4-staging-160435-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-amplifyc7866ffdec2b4-staging-160435-deployment",
+      "UnauthRoleName": "amplify-amplifyc7866ffdec2b4-staging-160435-unauthRole",
+      "StackName": "amplify-amplifyc7866ffdec2b4-staging-160435",
+      "StackId": "arn:aws:cloudformation:us-east-2:975050233774:stack/amplify-amplifyc7866ffdec2b4-staging-160435/41dd3070-c440-11ee-96cd-063bd7523d01",
+      "AmplifyAppId": "dh76gvqlakwc3"
+    },
+    "categories": {
+      "auth": {
+        "upstreamreactcaffc8f3": {
+          "userPoolId": "us-east-2_Dz5gVqBcz",
+          "userPoolName": "UpstreamSESMsg",
+          "webClientId": "5opmdsadr93nms8coljmcqh16v",
+          "nativeClientId": "5opmdsadr93nms8coljmcqh16v",
+          "identityPoolId": "us-east-2:de632c2e-b933-4fdd-a857-eccca117b94c",
+          "identityPoolName": "UpstreamSESMsg",
+          "allowUnauthenticatedIdentities": true,
+          "authRoleArn": "arn:aws:iam::975050233774:role/service-role/UpstreamVirginiaCog",
+          "authRoleName": "UpstreamVirginiaCog",
+          "unauthRoleArn": "arn:aws:iam::975050233774:role/service-role/UpstreamViriginiaCog_Guest",
+          "unauthRoleName": "UpstreamViriginiaCog_Guest"
+        },
+        "upstreamreact72fbb936": {
+          "userPoolId": "us-east-2_vsDpFEu4N",
+          "userPoolName": "UpstreamCogMsg",
+          "webClientId": "7gfgo1tth6ohhqhvrjt236i2q4",
+          "nativeClientId": "7gfgo1tth6ohhqhvrjt236i2q4",
+          "identityPoolId": "us-east-2:9ab06cf5-a999-4036-96c5-61d0a91eb5d0",
+          "identityPoolName": "UpstreamCogMsg",
+          "allowUnauthenticatedIdentities": true,
+          "authRoleArn": "arn:aws:iam::975050233774:role/service-role/UpstreamVirginiaCog",
+          "authRoleName": "UpstreamVirginiaCog",
+          "unauthRoleArn": "arn:aws:iam::975050233774:role/service-role/UpstreamViriginiaCog_Guest",
+          "unauthRoleName": "UpstreamViriginiaCog_Guest"
+        }
+      }
+    }
+  },
+  "test": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-amplifyc7866ffdec2b4-staging-160435-authRole",
+      "UnauthRoleArn": "arn:aws:iam::975050233774:role/amplify-amplifyc7866ffdec2b4-staging-160435-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::975050233774:role/amplify-amplifyc7866ffdec2b4-staging-160435-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-amplifyc7866ffdec2b4-staging-160435-deployment",
+      "UnauthRoleName": "amplify-amplifyc7866ffdec2b4-staging-160435-unauthRole",
+      "StackName": "amplify-amplifyc7866ffdec2b4-staging-160435",
+      "StackId": "arn:aws:cloudformation:us-east-2:975050233774:stack/amplify-amplifyc7866ffdec2b4-staging-160435/41dd3070-c440-11ee-96cd-063bd7523d01",
+      "AmplifyAppId": "dh76gvqlakwc3"
+    },
+    "categories": {
+      "auth": {
+        "upstreamreact": {
+          "userPoolId": "us-east-2_PSc0mVTYC",
+          "userPoolName": "Upstream-Auth",
+          "webClientId": "5ibvndafnn5addkmlfnqdqf1m7",
+          "nativeClientId": "5ibvndafnn5addkmlfnqdqf1m7"
+        },
+        "upstreamreact72fbb936": {}
+      }
+    }
+  },
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-seniorproject-dev-185640-authRole",
+      "UnauthRoleArn": "arn:aws:iam::975050233774:role/amplify-seniorproject-dev-185640-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::975050233774:role/amplify-seniorproject-dev-185640-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-seniorproject-dev-185640-deployment",
+      "UnauthRoleName": "amplify-seniorproject-dev-185640-unauthRole",
+      "StackName": "amplify-seniorproject-dev-185640",
+      "StackId": "arn:aws:cloudformation:us-east-1:975050233774:stack/amplify-seniorproject-dev-185640/0adfcfb0-c3b9-11ee-8d8c-12eb47108057",
+      "AmplifyAppId": "dmhzv16f71rh6"
+    },
+    "categories": {
+      "auth": {
+        "seniorproject7fbae277": {},
+        "seniorprojectb585bee1": {
+          "userPoolId": "us-east-1_L3Yq42Odu",
+          "userPoolName": "Upstream-Auth-Virginia",
+          "webClientId": "1fv9ho1101o1vjv6rr8emas58s",
+          "nativeClientId": "1fv9ho1101o1vjv6rr8emas58s",
+          "identityPoolId": "us-east-1:2a0c51a2-851f-4135-9980-fb38b8ffeb2c",
+          "identityPoolName": "Upstream-Authentication-Virginia2",
+          "allowUnauthenticatedIdentities": true,
+          "authRoleArn": "arn:aws:iam::975050233774:role/amplify-amplify67b96f5246744-staging-21338-authRole",
+          "authRoleName": "amplify-amplify67b96f5246744-staging-21338-authRole",
+          "unauthRoleArn": "arn:aws:iam::975050233774:role/amplify-amplify67b96f5246744-staging-21338-unauthRole",
+          "unauthRoleName": "amplify-amplify67b96f5246744-staging-21338-unauthRole"
+        }
+      }
+    }
+  }
+}

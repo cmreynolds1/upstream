@@ -1,0 +1,57 @@
+{
+  "name": "senior-project",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@aws-amplify/auth": "^6.0.16",
+    "@aws-amplify/ui-react": "^6.1.3",
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "aws-amplify": "^6.0.16",
+    "axios": "^1.6.8",
+    "bootstrap": "^5.3.2",
+    "react": "^18.2.0",
+    "react-bootstrap": "^2.10.1",
+    "react-dom": "^18.2.0",
+    "react-icons": "^5.0.1",
+    "react-router-dom": "^6.22.0",
+    "react-scripts": "^5.0.1",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "concurrently \"npm run start-react\" \"npm run start-nodes\"",
+    "start-react": "set PORT=80 && react-scripts start",
+    "start-nodes": "concurrently \"npm run start-authentication\" \"npm run start-dashboard\" \"npm run start-lists\" \"npm run start-forums\" \"npm run start-friends\" \"npm run start-profiles\"",
+    "start-authentication": "concurrently \"node C:/senior-project/nodeJS-scripts/authentication/steam_login/steam_login.js --port 9000\" \"node C:/senior-project/nodeJS-scripts/authentication/steam_login/sync_steam_id.js --port 9013\"",
+	"start-dashboard": "concurrently \"node C:/senior-project/nodeJS-scripts/databases/games/fetch_game_library.js --port 9002\" \"node C:/senior-project/nodeJS-scripts/databases/games/get_games.js --port 9003\" \"node C:/senior-project/nodeJS-scripts/databases/games/save_changes.js --port 9009\" \"node C:/senior-project/nodeJS-scripts/databases/games/update_games.js --port 9012\" \"node C:/senior-project/nodeJS-scripts/databases/games/get_achievements.js --port 9016\" \"node C:/senior-project/nodeJS-scripts/databases/lists/list_options.js --port 9010\"",
+	"start-lists": "concurrently \"node C:/senior-project/nodeJS-scripts/databases/lists/add_list.js --port 9011\" \"node C:/senior-project/nodeJS-scripts/databases/lists/get_lists.js --port 9017\" \"node C:/senior-project/nodeJS-scripts/databases/lists/delete_list.js --port 9018\" \"node C:/senior-project/nodeJS-scripts/databases/lists/statistics.js --port 9019\"",
+	"start-forums": "concurrently \"node C:/senior-project/nodeJS-scripts/databases/forums/get_posts.js --port 9004\" \"node C:/senior-project/nodeJS-scripts/databases/forums/submit_posts.js --port 9005\" \"node C:/senior-project/nodeJS-scripts/databases/forums/delete_post.js --port 9006\"",
+	"start-friends": "concurrently \"node C:/senior-project/nodeJS-scripts/friends/get_friends.js --port 9014\" \"node C:/senior-project/nodeJS-scripts/friends/add_friends.js --port 9015\" \"node C:/senior-project/nodeJS-scripts/friends/delete_friend.js --port 9020\"",
+	"start-profiles": "concurrently \"node C:/senior-project/nodeJS-scripts/databases/users/upload_changes.js --port 9007\" \"node C:/senior-project/nodeJS-scripts/databases/users/get_profile_data.js --port 9008\"",
+	"build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

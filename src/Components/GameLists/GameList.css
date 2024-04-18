@@ -1,0 +1,145 @@
+/* Container for the whole GameLists component */
+.game-lists-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Container for list creation form */
+.form-container {
+  margin-bottom: 20px;
+}
+
+/* Input for new list creation */
+.new-list-input {
+  padding: 8px;
+  margin-right: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+/* Button for new list creation */
+.new-list-button {
+  padding: 10px 20px;
+  background-color: #24a0ed;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.new-list-button:hover {
+  background-color: #1e90ff;
+}
+
+/* Form for adding a new game to the list */
+.add-game-form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+/* Dropdown select for choosing a list */
+.list-select {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+/* Input for new game details */
+.game-input {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+/* Button for adding a new game */
+.add-game-button {
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-game-button:hover {
+  background-color: #218838;
+}
+
+/* Container for the game lists */
+.game-lists {
+  width: 100%;
+}
+
+/* Individual list container */
+.list {
+  max-width: 700px;
+  margin: auto;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* List title */
+.list-title {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* Individual game container */
+.game {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+/* Game title */
+.game-title {
+  font-size: 1em;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+/* Game notes */
+.game-notes {
+  font-size: 0.8em;
+  color: #666;
+  margin: 5px 0;
+}
+
+.game-notes:before {
+  content: '•';
+  margin-right: 8px;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .add-game-form {
+    flex-direction: column;
+  }
+
+  .list-select,
+  .game-input,
+  .new-list-input {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .add-game-button,
+  .new-list-button {
+    width: 100%;
+  }
+
+  .list {
+    max-width: 100%;
+    margin: auto;
+  }
+}

@@ -1,0 +1,82 @@
+.friends-list-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .friends-list-title {
+    text-align: center;
+    width: 100%;
+    margin: 20px 0;
+  }
+  
+  .friends-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 100px; /* Adjust the gap to your preference */
+    width: 100%;
+  }
+  
+  .friend-card {
+    display: flex;
+    align-items: center;
+    background-color: #f3f4f6;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .friend-card:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .friend-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 12px;
+    flex-grow: 1;
+  }
+  
+  .friend-action-button {
+    border: none;
+    border-radius: 5px;
+    padding: 8px 16px;
+    margin-left: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .add-friend-btn {
+    background-color: #24a0ed;
+    color: #ffffff;
+  }
+  
+  .add-friend-btn:hover {
+    background-color: #1e90ff;
+  }
+  
+  .delete-friend-btn {
+    background-color: #ff6b6b;
+    color: #ffffff;
+  }
+  
+  .delete-friend-btn:hover {
+    background-color: #ff4757;
+  }
+  
+  .friend-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  /* Include this rule if you want to add icons to the buttons */
+  .friend-action-button i {
+    margin-right: 5px;
+  }  
