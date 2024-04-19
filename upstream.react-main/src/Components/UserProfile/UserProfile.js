@@ -24,7 +24,7 @@ function ProfilePage() {
         setUserAttributes(attributes);
         const steamId = attributes['custom:SteamID'];
         setNewDisplayName(attributes['custom:DisplayName']);
-        
+
         // Fetch user profile details from the database
         const response = await axios.get('http://upstreamreact.com:9008/get_profile_data', { params: { steamId } }); // Adjust the API endpoint as per your backend setup
         const { profilePictureBase64, profileBio } = response.data; // Assuming the response contains profilePictureBase64 and profileBio fields
@@ -62,50 +62,50 @@ function ProfilePage() {
   };
 
   const handleSaveAllChanges = async () => {
-  try {
-    // Save display name
-    const output = await updateUserAttribute({
-      userAttribute: {
-        attributeKey: 'custom:DisplayName',
-        value: newDisplayName,
-      },
-    });
-
-    // Upload profile picture and profile bio if selected
-    if (selectedProfilePicture || hasChangesInProfileBio || hasChanges) {
-      console.log('Selected Profile Picture:', selectedProfilePicture); // Add this line for logging
-      const formData = new FormData();
-      if (selectedProfilePicture) {
-        formData.append('profilePicture', selectedProfilePicture);
-      }
-      formData.append('profileBio', profileBio); // Append profile bio
-      formData.append('displayName', newDisplayName); // Append display name
-
-      const response = await axios.post(`http://upstreamreact.com:9007/upload_changes/${userAttributes['custom:SteamID']}`, formData, {
-        headers: {
-          'Content-Type': 'multipart/form-data'
-        }
+    try {
+      // Save display name
+      const output = await updateUserAttribute({
+        userAttribute: {
+          attributeKey: 'custom:DisplayName',
+          value: newDisplayName,
+        },
       });
 
-      // Set the updated profile picture data
-      setProfilePictureData(response.data.profilePictureBase64 || ''); // Updated to profilePictureBase64
-      setSelectedProfilePicture(null); // Reset selected picture
-      setNewFileSelected(false); // Reset new file selected
-      setHasChangesInProfileBio(false); // Reset changes in profile bio
-      setRefreshProfileData(true); // Trigger the useEffect hook to fetch updated profile data
+      // Upload profile picture and profile bio if selected
+      if (selectedProfilePicture || hasChangesInProfileBio || hasChanges) {
+        console.log('Selected Profile Picture:', selectedProfilePicture); // Add this line for logging
+        const formData = new FormData();
+        if (selectedProfilePicture) {
+          formData.append('profilePicture', selectedProfilePicture);
+        }
+        formData.append('profileBio', profileBio); // Append profile bio
+        formData.append('displayName', newDisplayName); // Append display name
+
+        const response = await axios.post(`http://upstreamreact.com:9007/upload_changes/${userAttributes['custom:SteamID']}`, formData, {
+          headers: {
+            'Content-Type': 'multipart/form-data'
+          }
+        });
+
+        // Set the updated profile picture data
+        setProfilePictureData(response.data.profilePictureBase64 || ''); // Updated to profilePictureBase64
+        setSelectedProfilePicture(null); // Reset selected picture
+        setNewFileSelected(false); // Reset new file selected
+        setHasChangesInProfileBio(false); // Reset changes in profile bio
+        setRefreshProfileData(true); // Trigger the useEffect hook to fetch updated profile data
+      }
+
+      // Reset all state variables related to changes
+      setHasChanges(false);
+      setHasChangesInProfileBio(false);
+      setNewFileSelected(false);
+      setSelectedProfilePicture(null);
+
+    } catch (error) {
+      console.error('Error saving all changes:', error);
+      setError(error.message || 'An error occurred');
     }
-
-    // Reset all state variables related to changes
-    setHasChanges(false);
-    setHasChangesInProfileBio(false);
-    setNewFileSelected(false);
-    setSelectedProfilePicture(null);
-
-  } catch (error) {
-    console.error('Error saving all changes:', error);
-    setError(error.message || 'An error occurred');
-  }
-};
+  };
 
 
   if (isLoading) {
@@ -118,25 +118,23 @@ function ProfilePage() {
 
   return (
     <div className="profile-page">
-      <h1>My Profile</h1>
-      <div>
-        <p>
-          <strong>Username: &ensp;</strong>
-          <input
-            type="text"
-            value={newDisplayName}
-            onChange={handleChangeDisplayName}
-          />
-        </p>
-		<p><strong>Email: &ensp;</strong> {userAttributes.email}</p>
-        <p><strong>Steam ID: &ensp;</strong> {userAttributes['custom:SteamID']}</p>
-        <p><strong>Profile Picture:</strong></p>
-        <div className="image-container">
-          <img src={profilePictureData ? `data:image/jpeg;base64,${profilePictureData}` : 'placeholder_image_url'} alt="Profile" />
-          <input type="file" accept="image/*" onChange={handleProfilePictureChange} />
-          {newFileSelected && <p>New file selected, changes will be applied upon saving.</p>} {/* Display message if new file selected */}
+      <div className="profile-header">
+        <div className="profile-image-section">
+          <img src={profilePictureData ? `data:image/jpeg;base64,${profilePictureData}` : 'placeholder_image_url'} alt="Profile" className="profile-picture" />
+          <input type="file" accept="image/*" onChange={handleProfilePictureChange} className="profile-picture-input" />
+          {newFileSelected && <p>New file selected, changes will be applied upon saving.</p>}
         </div>
-        <div>
+        <div className="profile-details">
+          <p>
+            <strong>Username: &ensp;</strong>
+            <input
+              type="text"
+              value={newDisplayName}
+              onChange={handleChangeDisplayName}
+            />
+          </p>
+          <p><strong>Email: &ensp;</strong> {userAttributes.email}</p>
+          <p><strong>Steam ID: &ensp;</strong> {userAttributes['custom:SteamID']}</p>
           <p>
             <strong>Bio: &ensp;</strong>
             <textarea
@@ -145,8 +143,8 @@ function ProfilePage() {
               onChange={handleChangeProfileBio}
             />
           </p>
+          {hasChanges && <button onClick={handleSaveAllChanges}>Save All Changes</button>}
         </div>
-        {hasChanges && <button onClick={handleSaveAllChanges}>Save All Changes</button>}
       </div>
     </div>
   );

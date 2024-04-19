@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Row, Col, Card, Form, Button } from 'react-bootstrap';
 import axios from 'axios';
 import { fetchUserAttributes } from 'aws-amplify/auth';
+import './ForumPage.css';
 
 function ForumPage() {
     const [posts, setPosts] = useState([]);
@@ -97,62 +97,57 @@ function ForumPage() {
     };
 
     return (
-        <Container>
-            <Row className="mt-5">
-                <Col xs={12}>
-                    <h2>Forum</h2>
-                    <Form onSubmit={handleSubmit}>
-                        <Form.Group className="mb-3" controlId="formPostTitle">
-                            <Form.Label>Title</Form.Label>
-                            <Form.Control
-                                type="text"
-                                placeholder="Enter post title"
-                                value={postTitle}
-                                onChange={(e) => setPostTitle(e.target.value)}
-                            />
-                        </Form.Group>
-                        <Form.Group className="mb-3" controlId="formPostContent">
-                            <Form.Label>Content</Form.Label>
-                            <Form.Control
-                                as="textarea"
-                                rows={3}
-                                placeholder="Enter post content"
-                                value={postContent}
-                                onChange={(e) => setPostContent(e.target.value)}
-                            />
-                        </Form.Group>
-                        <Button variant="primary" type="submit">
-                            Submit Post
-                        </Button>
-                    </Form>
-                </Col>
-            </Row>
-            <Row className="mt-4">
+        <div className="forum-container">
+            <div className="forum-header">
+                <h2>Forum</h2>
+            </div>
+            <div className="forum-form-container">
+                <form onSubmit={handleSubmit} className="forum-form">
+                    <div className="form-group">
+                        <label htmlFor="formPostTitle">Title</label>
+                        <input
+                            type="text"
+                            className="form-control"
+                            id="formPostTitle"
+                            placeholder="Enter post title"
+                            value={postTitle}
+                            onChange={(e) => setPostTitle(e.target.value)}
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="formPostContent">Content</label>
+                        <textarea
+                            className="form-control"
+                            id="formPostContent"
+                            rows="3"
+                            placeholder="Enter post content"
+                            value={postContent}
+                            onChange={(e) => setPostContent(e.target.value)}
+                        ></textarea>
+                    </div>
+                    <button type="submit" className="btn btn-primary">
+                        Submit Post
+                    </button>
+                </form>
+            </div>
+            <div className="forum-posts">
                 {posts.map((post, index) => (
-                    <Col key={index} xs={12} md={6} lg={4} className="mb-4">
-                        <Card>
-                            <Card.Body>
-                                <Card.Title>{post.Title}</Card.Title>
-                                <Card.Text>{post.Content}</Card.Text>
-                                <Card.Text>
-                                    <strong>Date Created:</strong> {post.DateCreated}
-                                </Card.Text>
-								<Card.Text>
-									<strong>Time Created:</strong> {formatDate(post.TimeCreated.replace(/\.\d+$/, ''))}
-								</Card.Text>
-                                <Card.Text>
-                                    <strong>Created By:</strong> {post.DisplayName}
-                                </Card.Text>
-                                <Card.Text><strong>User ID:</strong> {post.UserID}</Card.Text>
-                                {userID === post.UserID && (
-                                    <Button variant="danger" onClick={() => handleDeletePost(post.PostID)}>Delete</Button>
-                                )}
-                            </Card.Body>
-                        </Card>
-                    </Col>
+                    <div key={index} className="post-card">
+                        <div className="card-body">
+                            <h5 className="card-title">{post.Title}</h5>
+                            <p className="card-text">{post.Content}</p>
+                            <p className="card-info"><strong>Date Created:</strong> {post.DateCreated}</p>
+                            <p className="card-info"><strong>Time Created:</strong> {formatDate(post.TimeCreated.replace(/\.\d+$/, ''))}</p>
+                            <p className="card-info"><strong>Created By:</strong> {post.DisplayName}</p>
+                            <p className="card-info"><strong>User ID:</strong> {post.UserID}</p>
+                            {userID === post.UserID && (
+                                <button className="btn btn-danger" onClick={() => handleDeletePost(post.PostID)}>Delete</button>
+                            )}
+                        </div>
+                    </div>
                 ))}
-            </Row>
-        </Container>
+            </div>
+        </div>
     );
 }
 

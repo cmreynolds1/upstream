@@ -1,13 +1,9 @@
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Form from "react-bootstrap/Form";
-import Container from "react-bootstrap/Container";
-import Button from "react-bootstrap/Button";
-
-import { Link, useNavigate} from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { signIn} from "aws-amplify/auth";
+import { signIn } from "aws-amplify/auth";
 import { useAuth } from "./useAuth";
+
+import './LoginPage.css';
 
 function LoginPage(props) {
     const [email, setEmail] = useState('');
@@ -31,53 +27,56 @@ function LoginPage(props) {
     const handlePasswordChange = (e) => setPassword(e.target.value);
 
     return (
-        <Container>
-            <Row className="px-4 my-5">
-                <Col><h1>Login</h1></Col>
-            </Row>
-            <Row className="px-4 my-5">
-                <Col sm={6}>
-                    <Form>
-                        <Form.Group className="mb-3" controlId="formBasicEmail">
-                            <Form.Label>Email address</Form.Label>
-                            <Form.Control
+        <div>
+            <div>
+                <div>
+                    <h1 className="login-title">Login</h1>
+                </div>
+            </div>
+            <div>
+                <div className="login-container">
+                    <form className="login-form" onSubmit={handleSignIn}>
+                        <div>
+                            <label htmlFor="formBasicEmail"><strong>Email address</strong></label>
+                            <input
                                 type="email"
+                                className="form-control"
+                                id="formBasicEmail"
                                 placeholder="Enter email"
                                 value={email}
                                 onChange={handleEmailChange}
                             />
-                        </Form.Group>
+                        </div>
 
-                        <Form.Group className="mb-3" controlId="formBasicPassword">
-                            <Form.Label>Password</Form.Label>
-                            <Form.Control
+                        <div>
+                            <label htmlFor="formBasicPassword"><strong>Password</strong></label>
+                            <input
                                 type="password"
+                                className="form-control"
+                                id="formBasicPassword"
                                 placeholder="Password"
                                 value={password}
-                                onChange={handlePasswordChange} />
-
-                            <Form.Text className='text-muted'>
-                                <Link to='/ResetPass'>
-                                        Click here to reset your password!
-                                </Link>
-                            </Form.Text>
-                        </Form.Group>
-
-
-                        <Link
-                            to='/'>
-                            <Button variant="primary" type="button">Cancel</Button>
-                        </Link>
-                        &nbsp;&nbsp;
-
-                        &nbsp;&nbsp;
-                        <Button variant="primary" type="button"
-                            onClick={handleSignIn}>Login</Button>
-                    </Form>
-                </Col>
-            </Row>
-        </Container>
-    )
+                                onChange={handlePasswordChange}
+                            />
+                            <small>
+                                <Link to='/ResetPass'>Click here to reset your password!</Link>
+                            </small>
+                        </div>
+                        <br>
+                        </br>
+                        <div className="login-button-container">
+                            <button className='login-button' type="button" onClick={() => navigate('/Register')}>
+                                Register
+                            </button>
+                            <button className="login-button" type="submit">
+                                Login
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    );
 }
 
-export default LoginPage
+export default LoginPage;

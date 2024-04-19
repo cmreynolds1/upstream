@@ -1,145 +1,157 @@
-/* Container for the whole GameLists component */
 .game-lists-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap; /* Allows for wrapping if the window is too narrow */
+  gap: 20px; /* Spacing between the boxes */
+  font-family: 'Arial', sans-serif;
+  color: #333;
   padding: 20px;
+  align-items: flex-start; /* Aligns items to the top */
 }
 
-/* Container for list creation form */
-.form-container {
-  margin-bottom: 20px;
-}
-
-/* Input for new list creation */
-.new-list-input {
-  padding: 8px;
-  margin-right: 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
-
-/* Button for new list creation */
-.new-list-button {
-  padding: 10px 20px;
-  background-color: #24a0ed;
-  color: #ffffff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.new-list-button:hover {
-  background-color: #1e90ff;
-}
-
-/* Form for adding a new game to the list */
-.add-game-form {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 20px;
-}
-
-/* Dropdown select for choosing a list */
-.list-select {
-  padding: 8px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
-
-/* Input for new game details */
-.game-input {
-  padding: 8px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
-
-/* Button for adding a new game */
-.add-game-button {
-  padding: 10px 20px;
-  background-color: #28a745;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.add-game-button:hover {
-  background-color: #218838;
-}
-
-/* Container for the game lists */
-.game-lists {
-  width: 100%;
-}
-
-/* Individual list container */
-.list {
-  max-width: 700px;
-  margin: auto;
-  padding: 10px;
-  border-radius: 8px;
-  background-color: #ffffff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-/* List title */
-.list-title {
-  font-size: 1.5em;
-  margin-bottom: 10px;
-  text-align: center;
-}
-
-/* Individual game container */
-.game {
-  border-bottom: 1px solid #eee;
-  padding-bottom: 10px;
-  margin-bottom: 10px;
-}
-
-/* Game title */
-.game-title {
-  font-size: 1em;
-  color: #333;
-  margin-bottom: 5px;
-}
-
-/* Game notes */
-.game-notes {
-  font-size: 0.8em;
-  color: #666;
-  margin: 5px 0;
-}
-
-.game-notes:before {
-  content: '•';
-  margin-right: 8px;
-  color: #333;
+.section-container {
+  flex-basis: calc(50% - 10px); /* Allocate equal width minus the gap */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 15px;
+  background-color: #fff;
+  box-sizing: border-box; /* Includes padding and border in the element's total width and height */
+  max-height: 500px;
+  overflow-y: auto;
 }
 
 @media (max-width: 768px) {
-  .add-game-form {
-    flex-direction: column;
+  .section-container {
+    flex-basis: 100%;
   }
+}
 
-  .list-select,
-  .game-input,
-  .new-list-input {
-    width: 100%;
-    margin-bottom: 10px;
-  }
+.list-creation-section,
+.my-lists-section,
+.statistics-section {
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 15px;
+  background-color: #fff;
+}
 
-  .add-game-button,
-  .new-list-button {
-    width: 100%;
-  }
+.list-creation-section {
+  flex-basis: 100%; /* List Creation takes full width */
+  margin-bottom: 20px; /* Spacing between List Creation and other sections */
+}
 
-  .list {
-    max-width: 100%;
-    margin: auto;
-  }
+.my-lists-section, .statistics-section {
+  min-height: 500px;
+}
+
+h2 {
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+.form-container,
+.statistics-container,
+.lists-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.new-list-input,
+.delete-list-button {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.new-list-button {
+  background-color: #28a745;
+  color: white;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.new-list-button:hover {
+  background-color: #218838;
+}
+
+.delete-list-button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.delete-list-button:hover {
+  background-color: #bd2130;
+}
+
+.list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.list-item:last-child {
+  border-bottom: none;
+}
+
+.statistics-container p,
+.statistics-container ul {
+  margin-bottom: 10px;
+}
+
+.statistics-container h3 {
+  margin-top: 15px;
+  color: #007bff;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  padding: 5px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  background-color: #f2f2f2;
+}
+
+/* Adjust the width of the lists to fit content */
+.list-item span {
+  flex-grow: 1;
+}
+
+/* Style for inputs and buttons */
+input[type="text"] {
+  width: 100%;
+  margin-bottom: 10px; /* Space between the input and the buttons */
+}
+
+.section-container::-webkit-scrollbar {
+  width: 10px;
+}
+
+.section-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.section-container::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+.section-container::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }

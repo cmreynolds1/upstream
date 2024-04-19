@@ -17,7 +17,7 @@ import ValidatePage from './Components/Auth/ValidatePage';
 import ResetPass from './Components/Auth/ResetPass';
 import PrivateRoutes from './Components/Auth/PrivateRoute';
 import SteamGamesList from './Components/SteamGamesList/SteamGamesList';
-import ForumPage from './Components/Discussions/HomePage';
+import ForumPage from './Components/Discussions/ForumPage';
 import Friends from './Components/Friends/Friends';
 import GameLists from './Components/GameLists/GameList';
 import ProfilePage from './Components/UserProfile/UserProfile';

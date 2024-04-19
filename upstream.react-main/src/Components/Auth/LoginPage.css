@@ -1,0 +1,71 @@
+/* LoginPage.css */
+.login-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  .login-title {
+    text-align: center; /* Center the title text */
+    margin-top: 20px; /* Add top margin if needed */
+    margin-bottom: 40px; /* Space before the form starts */
+  }
+  
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the form items */
+  }
+  
+  .login-form label {
+    margin-bottom: 5px;
+  }
+  
+  .login-form input {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .login-form input,
+.login-form button {
+  max-width: 300px; /* Set a maximum width for inputs and buttons */
+  width: 100%; /* Ensure they take up the available space up to the max width */
+}
+
+  .login-button-container {
+    display: flex;
+    justify-content: center; /* Center the buttons horizontally */
+    gap: 20px; /* Space between the buttons */
+  }
+  
+  .login-form button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  
+  .login-form button:hover {
+    background-color: #0056b3;
+  }
+
+  .login-button {
+    padding: 10px 15px; /* Adjust padding to reduce size */
+    /* Other styling properties */
+  }
+  
+  .login-form a {
+    text-decoration: none;
+    color: #007bff;
+    margin-bottom: 15px;
+  }
+  
+  .login-form a:hover {
+    text-decoration: underline;
+  }
+  

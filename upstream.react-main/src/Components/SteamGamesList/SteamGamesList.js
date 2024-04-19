@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { fetchUserAttributes } from 'aws-amplify/auth';
 import { Heading } from '@aws-amplify/ui-react';
 import axios from 'axios';
+import './SteamGamesList.css';
 
 function SteamGamesList() {
   const [statusFilter, setStatusFilter] = useState('all');
@@ -202,7 +203,7 @@ function SteamGamesList() {
 
 
   return (
-    <div id="mainpage">
+    <div class="mainpage">
       <div className='container'>
         <Heading level={4} id="Upstreamtitle">Games Overview
           <select
@@ -216,7 +217,7 @@ function SteamGamesList() {
             ))}
           </select>
         </Heading>
-        <div>
+        <div className='button-container'>
           <button onClick={fetchGamesLibrary}>Import Library</button>
           <button onClick={reloadGames}>Reload Games</button>
         </div>

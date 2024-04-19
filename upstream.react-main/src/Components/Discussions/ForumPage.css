@@ -1,0 +1,85 @@
+.forum-container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+  }
+  
+  .forum-header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .forum-form-container {
+    margin-bottom: 20px;
+  }
+  
+  .forum-form .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+  }
+  
+  .btn-danger {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  }
+  
+  .btn-danger:hover {
+  background-color: #bd2130;
+  }
+  
+  .forum-posts {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  }
+  
+  .post-card {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+  padding: 15px;
+  background-color: #fff;
+  }
+  
+  .card-body {
+  margin-bottom: 15px;
+  }
+  
+  .card-title {
+  font-size: 1.25rem;
+  margin-bottom: 15px;
+  }
+  
+  .card-text {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  }
+  
+  .card-info {
+  font-size: 0.875rem;
+  margin-bottom: 5px;
+  }

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import { resetPassword, confirmResetPassword } from "aws-amplify/auth";
 import { Link } from "react-router-dom";
 import Tooltip_PassReq from "../Tooltips/Tooltip_PassReq";
+import './ResetPass.css';
 
 function ResetPass() {
     const navigate = useNavigate();
@@ -50,66 +50,70 @@ function ResetPass() {
     };
 
     return (
-        <Container>
-            <Row className="px-4 my-5">
-                <Col><h1>Reset Password</h1></Col>
-            </Row>
-            <Row className="px-4 my-5">
-                <Col sm={6}>
-                    <Form>
-                        <Form.Group className="mb-3" controlId="formBasicEmail">
-                            <Form.Label>Email address</Form.Label>
-                            <Form.Control
+        <div className="reset-container">
+            <div className="reset-header">
+                <h1>Reset Password</h1>
+            </div>
+            <div className="reset-form-container">
+                <form className="reset-form">
+                    {/* Email input */}
+                    <div className="email-container">
+                        <label>
+                            Email address
+                            <input
+                                className="email-input"
                                 type="email"
                                 placeholder="Enter email"
                                 value={email}
                                 onChange={handleEmailChange}
                             />
-                            <Form.Text className='text-muted'>
-                                <Button variant="link" onClick={handleSendCode} style={{ padding: 0, fontSize: 12.5 }}>
-                                     Click to recieve confirmation code
-                                </Button>
-                            </Form.Text>
-                        </Form.Group>
-
-                        <Form.Group className="mb-3" controlId="formBasicConfirmationCode">
-                            <Form.Label>Confirmation Code</Form.Label>
-                            <Form.Control
-                                type="text"
-                                placeholder="Enter confirmation code"
-                                value={resetCode}
-                                onChange={(handleResetCodeChange)}
-                            />
-                        </Form.Group>
-
-                        <Form.Group className="mb-3" controlId="formBasicNewPassword">
-                            <Form.Label>New Password<Tooltip_PassReq/></Form.Label>
-                            <Form.Control
-                                type="password"
-                                placeholder="New Password"
-                                value={newPassword}
-                                onChange={handleNewPasswordChange} />
-                        </Form.Group>
-
-                        <Form.Group className="mb-3" controlId="formBasicConfirmPassword">
-                            <Form.Label>Confirm New Password</Form.Label>
-                            <Form.Control
-                                type="password"
-                                placeholder="Confirm New Password"
-                                value={confirmPassword}
-                                onChange={handleConfirmPasswordChange} />
-                        </Form.Group>
-                        <Link to='/'>
-                            <Button variant="primary" type="button">Cancel</Button>
+                        </label>
+                        <button type="button" onClick={handleSendCode} className="send-code-button">
+                            Receive Code
+                        </button>
+                    </div>
+                    {/* Confirmation Code input */}
+                    <label>
+                        Confirmation Code
+                        <input
+                            type="text"
+                            placeholder="Enter confirmation code"
+                            value={resetCode}
+                            onChange={handleResetCodeChange}
+                        />
+                    </label>
+                    {/* New Password input */}
+                    <label>
+                        New Password <Tooltip_PassReq />
+                        <input
+                            type="password"
+                            placeholder="New Password"
+                            value={newPassword}
+                            onChange={handleNewPasswordChange}
+                        />
+                    </label>
+                    {/* Confirm New Password input */}
+                    <label>
+                        Confirm New Password
+                        <input
+                            type="password"
+                            placeholder="Confirm New Password"
+                            value={confirmPassword}
+                            onChange={handleConfirmPasswordChange}
+                        />
+                    </label>
+                    {/* Action Buttons */}
+                    <div className="reset-action-buttons">
+                        <Link to="/">
+                            <button type="button">Cancel</button>
                         </Link>
-                        &nbsp;&nbsp;
-                        <Button variant="primary" type="button" onClick={handleResetPassword}>
+                        <button type="button" onClick={handleResetPassword}>
                             Submit New Password
-                        </Button>
-                    </Form>
-                </Col>
-            </Row>
-        </Container>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
     );
 }
 

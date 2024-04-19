@@ -1,0 +1,86 @@
+/* ResetPass.css */
+
+.reset-container {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+}
+
+.reset-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.reset-form-container {
+    display: flex;
+    justify-content: center;
+}
+
+.reset-form {
+    width: 100%;
+}
+
+.reset-form label {
+    display: block;
+}
+
+.reset-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.reset-action-buttons {
+    text-align: center;
+}
+
+.reset-action-buttons button {
+    padding: 10px 15px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+.reset-action-buttons button:hover {
+    background-color: #0056b3;
+}
+
+.reset-form a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.reset-form a:hover {
+    text-decoration: underline;
+}
+
+.send-code-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    max-height:100%;
+    margin-bottom: 12px;
+}
+
+.email-input {
+    flex-grow: 1;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.email-container {
+    display: flex;
+    align-items: center;
+    gap: 10px
+}
+
+.send-code-button:hover {
+    background-color: #0056b3;
+}

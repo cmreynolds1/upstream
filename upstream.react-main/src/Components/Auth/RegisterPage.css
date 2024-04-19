@@ -1,0 +1,72 @@
+/* RegisterPage.css */
+
+.register-container {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .register-title {
+    text-align: center; /* Center the title text */
+    margin-top: 20px; /* Add top margin if needed */
+    margin-bottom: 40px; /* Space before the form starts */
+  }
+  
+  .register-form {
+    width: 100%;
+  }
+  
+  .register-form label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .register-form input,
+  .register-form button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .register-form button {
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .register-form button:hover {
+    background-color: #0056b3;
+  }
+  
+  .register-form a {
+    text-decoration: none;
+    color: #007bff;
+    display: block;
+    margin-bottom: 15px;
+  }
+  
+  .register-form a:hover {
+    text-decoration: underline;
+  }
+
+  .steamid-field-container {
+    display: flex;  /* Enables flexbox layout */
+    align-items: center;  /* Centers items vertically */
+    justify-content: space-between;  /* Puts space between items */
+    gap: 10px
+  }
+  
+  .steamid-input {
+    flex-grow: 1;  /* Allows input to fill available space */
+    margin-right: 10px;  /* Adds spacing between input and image */
+  }
+  
+  .steam-signin-img {
+    flex-shrink: 0;  /* Prevents the image from shrinking */
+  }
+  

@@ -1,71 +1,119 @@
-@import url('https://fonts.googleapis.com/css?family=Orbitron');
-
-#mainpage .gamepic {
-  width: 50px;
-  height: 50px;
+/* Main container and layout */
+#mainpage {
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  padding: 20px;
 }
 
-#mainpage table {
-  margin-left: auto;
-  margin-right: auto;
+.container {
+  display: flex; /* Use flexbox for layout */
+  align-items: center; /* Align items vertically */
+  justify-content: space-between; /* Distribute space between items */
+  margin-bottom: 20px;
 }
 
-#mainpage #Upstreamtitle {
-  font-family: "Arial";
-  text-align: center;
-}
-
-#mainpage th {
-  padding: 10px;
-}
-
-#mainpage .game-row {
-  transition: opacity 0.5s ease, max-height 0.5s ease, padding 0.5s ease, margin 0.5s ease;
-  opacity: 1;
-  max-height: 100px;
-  text-align: center;
-}
-
-#mainpage .game-row.hidden {
-  max-height: 0;
-  opacity: 0;
-  overflow: hidden;
-  padding: 0;
-  margin: 0;
-  border: none;
-  display: none;
-}
-
-#mainpage #footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  text-align: inherit;
-}
-
-#mainpage .gameheader {
-  text-align: center;
-}
-
-#mainpage .heading-container {
+.button-container {
   display: flex;
-  justify-content: space-between;
   align-items: center;
 }
 
-#mainpage .heading-title {
-  flex-grow: 1;
+/* Headings */
+#Upstreamtitle {
+  font-size: 24px;
+  font-weight: bold;
+  flex-grow:1;
+}
+
+/* Buttons */
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-right: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Dropdowns */
+.small-dropdown {
+  border: 1px solid #ccc;
+  padding: 5px;
+  border-radius: 5px;
+  margin-left: 20px;
+}
+
+/* Input fields */
+.search-input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: calc(100% - 24px); /* Adjust width to account for padding and border */
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.notes-input {
+  width: 100%;
+  min-height: 50px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Table styling */
+#games-list {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.gameheader {
+  background-color: #f2f2f2;
+  cursor: pointer;
+}
+
+.gameheader th {
+  text-align: left;
+  padding: 10px;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.game-row {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.game-row:hover {
+  background-color: #f9f9f9;
+}
+
+.game-number, .gamepic {
   text-align: center;
 }
 
-#mainpage .small-dropdown {
-  max-width: 200px;
-  padding: 5px;
+.gamepic {
+  width: 50px;
+  height: auto;
 }
 
-#mainpage .small-button {
+/* Achievement percentage button */
+.game-row button {
+  background-color: #3fa858;
+  color: white;
   padding: 5px 10px;
-  font-size: 0.8rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.game-row button:hover {
+  background-color: #218838;
+}
+
+/* Rating dropdown */
+.game-row .small-dropdown {
   margin: 0;
 }

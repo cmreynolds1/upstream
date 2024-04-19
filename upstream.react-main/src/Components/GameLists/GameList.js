@@ -106,7 +106,7 @@ function GameLists() {
   return (
     <div className="game-lists-container">
       {/* List Creation Section */}
-      <div className="list-creation-section">
+      <div className="list-creation-section section-container">
         <h2>List Creation</h2>
         <div className="form-container">
           <input
@@ -122,7 +122,7 @@ function GameLists() {
       </div>
 
       {/* My Lists Section */}
-      <div className="my-lists-section">
+      <div className="my-lists-section section-container">
         <h2>My Lists</h2>
         <div className="lists-container">
           {lists.map((list, index) => (
@@ -135,7 +135,7 @@ function GameLists() {
       </div>
 
       {/* Statistics Section */}
-      <div className="statistics-section">
+      <div className="statistics-section section-container">
         <h2>Statistics</h2>
         <div className="statistics-container">
           <p>Total Lists: {statistics.totalLists || 0}</p>

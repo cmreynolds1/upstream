@@ -1,65 +1,53 @@
 .profile-page {
-    color: #fff;
-    font-family: '', sans-serif;
-    padding: 20px;
-    max-width: 800px;
-    margin: 0 auto;
-  }
-  
-  .profile-page h1 {
-    color: #000000;
-    text-transform: uppercase;
-    text-align: center;
-    border-bottom: 2px solid #000000;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
-  }
-  
-  .loading {
-    text-align: center;
-    color: #000000;
-  }
-  
-  .error {
-    color: #f64747;
-    background-color: #2a2a2a;
-    padding: 10px;
-    border-radius: 4px;
-    text-align: center;
-    margin-bottom: 20px;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Aligns container to the center of the page */
+  margin: auto; /* This will center the container on the page if it's a block-level element */
+  max-width: 900px; /* Maximum width of the profile container */
+  padding: 20px;
+  box-sizing: border-box; /* Ensures padding is included in width */
+}
 
-  .profile-page p {
-	background-color: #1e1e1e;
-	padding: 15px;
-	border-radius: 4px;
-	border-left: 4px solid #21d07a;
-	margin-top: 10px;
-	margin-bottom: 10px;
-	line-height: 1.6;
-	display: flex;
-	align-items: center;
-  }
+.profile-header {
+  display: flex;
+  width: 100%; /* Full width of the .profile-page container */
+  align-items: flex-start;
+  gap: 20px; /* Space between image section and details section */
+}
 
-  
-  .profile-page p:hover {
-    background-color: #292929;
-    border-left-color: #f64747;
-  }
-  
-  .image-container {
-	border: 2px solid #ccc; /* Border style and color */
-	border-radius: 8px; /* Rounded border corners */
-	padding: 8px; /* Padding around the image */
-	max-width: 200px; /* Maximum width for the image container */
-	margin: 0 auto; /* Center the image container */
-	}
-	
-	.image-container img {
-	display: block; /* Ensure the image is a block element */
-	width: 100%; /* Take up the full width of its container */
-	height: auto; /* Automatically adjust height based on width */
-	max-width: 100%; /* Ensure the image does not exceed its container width */
-	max-height: 200px; /* Maximum height for the image */
-	margin: 0 auto; /* Center the image horizontally */
-	}
+.profile-image-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-picture {
+  width: 150px; /* Adjust as needed */
+  height: 150px; /* Adjust as needed */
+  border-radius: 50%;
+  object-fit: cover; /* For responsive images */
+  margin-bottom: 10px;
+}
+
+.profile-details {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  max-width: 500px; /* Maximum width of the details section */
+  width: 100%;
+}
+
+.profile-details h1 {
+  text-align: center; /* Center the My Profile title */
+}
+
+.profile-details input,
+.profile-details textarea {
+  width: 100%; /* Take full width of the .profile-details container */
+  max-width: 500px; /* Maximum width of input fields */
+  margin-bottom: 10px;
+}
+
+.profile-details button {
+  align-self: center; /* Center button within the details section */
+}
