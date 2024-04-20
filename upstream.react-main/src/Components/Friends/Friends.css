@@ -15,7 +15,7 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 100px; /* Adjust the gap to your preference */
+    gap: 100px;
     width: 100%;
   }
   
@@ -76,7 +76,6 @@
     object-fit: cover;
   }
   
-  /* Include this rule if you want to add icons to the buttons */
   .friend-action-button i {
     margin-right: 5px;
   }  
