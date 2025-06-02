@@ -27,7 +27,7 @@ passport.deserializeUser((user, done) => {
 passport.use(new SteamStrategy({
     returnURL: 'http://upstreamreact.com:9000/auth/steam/return',
     realm: 'http://upstreamreact.com:9000/',
-    apiKey: '07BEB18F79F782CA90CBA4C16DA3DB98'
+    apiKey: 'INSERT_API_KEY_HERE'
   },
   function(identifier, profile, done) {
     // Extract the SteamID from the profile object
